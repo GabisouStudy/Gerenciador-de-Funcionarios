@@ -79,7 +79,7 @@ namespace GerenciadorDeFuncionarios
 
             sexoAtual = null;
             idAtual++;
-            printText.Text += "ID: "  +  f1.id  +  "|Nome:" + f1.nome + "|Soberenome:" + f1.sobrenome + "|Profissão:" + f1.profissao + "|Sexo:" + f1.sexo + "|EstadoCivil:" + f1.estadoCivil + "|Telefone:" + f1.telefone + "|email"+f1.email+"|Endereço:"+f1.endereco+"|CEP:"+f1.cep+"|CPF:"+f1.cpf+"|Data de Contratação:"+f1.dataC+"|Facebook:"+f1.facebook+"|Idade:"+f1.idade+"|Número de Filhos:"+f1.filhos+"|Salário:"+f1.salario+"|\n";
+            printText.Text += "ID: "  +  f1.id  +  "|Nome:" + f1.nome + "|Soberenome:" + f1.sobrenome + "|Profissão:" + f1.profissao + "|Sexo:" + f1.sexo + "|EstadoCivil:" + f1.estadoCivil + "|Telefone:" + f1.telefone + "|E-mail:"+f1.email+"|Endereço:"+f1.endereco+"|CEP:"+f1.cep+"|CPF:"+f1.cpf+"|Data de Contratação:"+f1.dataC+"|Facebook:"+f1.facebook+"|Idade:"+f1.idade+"|Número de Filhos:"+f1.filhos+"|Salário:"+f1.salario+"|\n";
         }
 
         private void print2_Click(object sender, EventArgs e)
@@ -180,35 +180,41 @@ namespace GerenciadorDeFuncionarios
 
         private void loadButton_Click(object sender, EventArgs e)
         {
+            listFuncionarios.Items.Clear();
+            printText.Text = "";
             string[] linhas = System.IO.File.ReadAllLines(@"WriteText.txt");
             foreach (string linha in linhas)
             {
                 string[] dados = linha.Split(new Char[] { '|', ':' });
                 Funcionario func = new Funcionario()
                 {
-                    id = int.Parse(dados[2]),
-                    nome = dados[4],
-                    sobrenome = dados[6],
-                    estadoCivil = dados[12],
-                    telefone = dados[14],
-                    email = dados[16],
-                    endereco = dados[18],
-                    cep = dados[20],
-                    cpf = dados[22],
-                    dataC = dados[24],
-                    facebook = dados[26],
-                    profissao = dados[8],
-                    idade = int.Parse(dados[28]),
-                    filhos = int.Parse(dados[30]),
-                    salario = float.Parse(dados[32]),
-                    sexo = dados[10],
+                    id = int.Parse(dados[1]),
+                    nome = dados[3],
+                    sobrenome = dados[5],
+                    estadoCivil = dados[11],
+                    telefone = dados[13],
+                    email = dados[15],
+                    endereco = dados[17],
+                    cep = dados[19],
+                    cpf = dados[21],
+                    dataC = dados[23],
+                    facebook = dados[25],
+                    profissao = dados[7],
+                    idade = int.Parse(dados[27]),
+                    filhos = int.Parse(dados[29]),
+                    salario = float.Parse(dados[31]),
+                    sexo = dados[9],
                 };
                 //func.nome = dados[4];
                 //...
+                //MessageBox.Show("" + dados[31]);
+                
+                    
+
                 listaDefault.Add(func);
+                listFuncionarios.Items.Add(func);
+                printText.Text += "ID: " + func.id + "|Nome:" + func.nome + "|Soberenome:" + func.sobrenome + "|Profissão:" + func.profissao + "|Sexo:" + func.sexo + "|EstadoCivil:" + func.estadoCivil + "|Telefone:" + func.telefone + "|E-mail:" + func.email + "|Endereço:" + func.endereco + "|CEP:" + func.cep + "|CPF:" + func.cpf + "|Data de Contratação:" + func.dataC + "|Facebook:" + func.facebook + "|Idade:" + func.idade + "|Número de Filhos:" + func.filhos + "|Salário:" + func.salario + "\n";
             }
-
-
 
             /*
             printText.Text = System.IO.File.ReadAllText(@"WriteText.txt");
