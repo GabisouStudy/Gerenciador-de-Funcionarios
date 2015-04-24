@@ -205,58 +205,11 @@ namespace GerenciadorDeFuncionarios
                     salario = float.Parse(dados[31]),
                     sexo = dados[9],
                 };
-                //func.nome = dados[4];
-                //...
-                //MessageBox.Show("" + dados[31]);
-                
-                    
 
                 listaDefault.Add(func);
                 listFuncionarios.Items.Add(func);
                 printText.Text += "ID: " + func.id + "|Nome:" + func.nome + "|Soberenome:" + func.sobrenome + "|Profissão:" + func.profissao + "|Sexo:" + func.sexo + "|EstadoCivil:" + func.estadoCivil + "|Telefone:" + func.telefone + "|E-mail:" + func.email + "|Endereço:" + func.endereco + "|CEP:" + func.cep + "|CPF:" + func.cpf + "|Data de Contratação:" + func.dataC + "|Facebook:" + func.facebook + "|Idade:" + func.idade + "|Número de Filhos:" + func.filhos + "|Salário:" + func.salario + "\n";
             }
-
-            /*
-            printText.Text = System.IO.File.ReadAllText(@"WriteText.txt");
-
-
-            string[] split = printText.Text.Split(new Char[] { '|', ':' });
-            /*for (int i = 0; i < split.Length; i++ )
-            {
-                MessageBox.Show(split[i]);
-            }
-            
-            //List<Funcionario> listaDefault = new List<Funcionario>();
-
-            listFuncionarios.Items.Clear();
-
-            for (int a = 0; a < split.Length / 32; a++)
-            {
-                Funcionario f1 = new Funcionario();
-                for (int i = 0; i < split.Length; i++)
-                {
-                    f1.id = int.Parse(split[2]);
-                    f1.nome = split[4];
-                    f1.sobrenome = split[6];
-                    f1.estadoCivil = split[12];
-                    f1.telefone = split[14];
-                    f1.email = split[16];
-                    f1.endereco = split[18];
-                    f1.cep = split[20];
-                    f1.cpf = split[22];
-                    f1.dataC = split[24];
-                    f1.facebook = split[26];
-                    f1.profissao = split[8];
-                    f1.idade = int.Parse(split[28]);
-                    f1.filhos = int.Parse(split[30]);
-                    f1.salario = float.Parse(split[32]);
-                    f1.sexo = split[10];
-                }
-                listaDefault.Add(f1);
-            }
-            for (int i = 0; i < listaDefault.Count; i++){
-                listFuncionarios.Items.Add(listaDefault[i]);
-            }*/
         }
         
     }
